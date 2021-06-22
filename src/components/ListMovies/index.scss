@@ -1,21 +1,6 @@
 .list-movies {
   margin-top: 16px;
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-
-    .tag-movie {
-      padding: 7px 50px;
-
-      background-color: #303539;
-      color: #299ded;
-      font-size: 25px;
-
-      border-radius: 50px;
-    }
-  }
-
   &__body {
     display: flex;
     justify-content: space-between;

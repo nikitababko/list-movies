@@ -20,12 +20,6 @@ const ListMovies = () => {
 
   return (
     <div className="list-movies">
-      <div className="list-movies__header">
-        <div className="tag-movie">
-          <p>Титаник</p>
-        </div>
-      </div>
-
       <div className="list-movies__body">
         <CardMovie movies={movies} />
       </div>
