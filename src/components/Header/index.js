@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import SearchIcon from './assets/SearchIcon';
 import FavIcon from './assets/FavIcon';
@@ -11,21 +12,21 @@ const Header = () => {
   return (
     <header className="header">
       <nav className="nav">
-        <a className="nav__link" href="">
+        <Link className="nav__link" to="/">
           <SearchIcon />
-        </a>
+        </Link>
 
-        <a className="nav__link" href="">
+        <Link className="nav__link" to="/favorites">
           <FavIcon />
-        </a>
+        </Link>
 
-        <a className="nav__link" href="">
+        <Link className="nav__link" to="/trendings">
           <TrendingIcon />
-        </a>
+        </Link>
 
-        <a className="nav__link" href="">
+        <Link className="nav__link" to="/">
           <InformationIcon />
-        </a>
+        </Link>
       </nav>
     </header>
   );
