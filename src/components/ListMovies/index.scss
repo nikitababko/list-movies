@@ -25,6 +25,8 @@
     .card-movie {
       position: relative;
 
+      margin: 30px 0;
+
       border: 3px solid transparent;
       cursor: pointer;
       transition: border 0.4s ease-in-out;
@@ -42,6 +44,9 @@
       }
 
       img {
+        width: 253px;
+        height: 368px;
+
         transition: filter 0.4s ease-in-out;
       }
 
