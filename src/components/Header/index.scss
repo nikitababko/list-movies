@@ -14,11 +14,10 @@
 
     &__link {
       margin: 0 60px;
-
       cursor: pointer;
 
-      &:first-child {
-        .test {
+      &.active {
+        .active-svg {
           fill: #299ded;
         }
       }
