@@ -10,7 +10,7 @@ const Body = () => {
     <div className="body">
       <Switch>
         <Route exact path="/" component={ListMovies} />
-        <Route exact path="/favorites" component={ListMovies} />
+        <Route exact path="/favorites" />
       </Switch>
     </div>
   );

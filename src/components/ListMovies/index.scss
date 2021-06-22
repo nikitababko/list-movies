@@ -113,4 +113,27 @@
       }
     }
   }
+
+  &__footer {
+    nav {
+      .pagination {
+        display: flex;
+        justify-content: space-between;
+        width: 500px;
+        margin: 0 auto;
+
+        .page-item {
+          button {
+            padding: 10px 15px;
+
+            color: #606365;
+            background-color: #303539;
+
+            border: none;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
 }
