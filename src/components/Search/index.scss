@@ -1,0 +1,32 @@
+.search {
+  position: relative;
+
+  margin: 0 auto;
+  max-width: 342px;
+
+  input {
+    width: 100%;
+    padding: 27px 0 27px 27px;
+
+    border: none;
+    border-radius: 15px;
+
+    background-color: #303539;
+    color: darken(#ffffff, 50);
+
+    &:focus {
+      box-shadow: 0px 7px 10px -1px #299ded;
+      transition: box-shadow 0.4s ease-in-out;
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    right: 19px;
+    transform: translateY(-50%);
+
+    border: none;
+    background-color: transparent;
+  }
+}
