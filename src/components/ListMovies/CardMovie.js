@@ -1,6 +1,6 @@
 import React from 'react';
 
-import StarIcon from 'components/ListMovies/StarIcon';
+import StarIcon from './StarIcon';
 
 const CardMovie = ({ movies }) => {
   return (

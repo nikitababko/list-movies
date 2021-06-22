@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import { CardMovie, Pagination } from 'components';
+import Pagination from './Pagination';
+import Search from './Search/Search';
+import CardMovie from './CardMovie';
 
 import './index.scss';
-import Search from 'components/Search';
 
 const ListMovies = () => {
   // const [loading, setLoading] = useState(false);
