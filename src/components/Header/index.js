@@ -20,13 +20,13 @@ const Header = () => {
           <FavIcon />
         </Link>
 
-        <Link className="nav__link" to="/trendings">
+        {/* <Link className="nav__link" to="/trendings">
           <TrendingIcon />
         </Link>
 
         <Link className="nav__link" to="/">
           <InformationIcon />
-        </Link>
+        </Link> */}
       </nav>
     </header>
   );

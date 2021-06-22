@@ -9,8 +9,8 @@ const Body = () => {
   return (
     <div className="body">
       <Switch>
-        <Route exact path="/" component={Search} />
-        <Route exact path="/trendings" component={ListMovies} />
+        <Route exact path="/" component={ListMovies} />
+        <Route exact path="/favorites" component={ListMovies} />
       </Switch>
     </div>
   );
