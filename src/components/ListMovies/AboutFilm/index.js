@@ -13,8 +13,8 @@ const AboutFilm = () => {
   };
 
   const initialStateFavoriteMovie = () => {
-    if (localStorage.getItem('favoriteMovie')) {
-      return JSON.parse(localStorage.getItem('favoriteMovie'));
+    if (localStorage.getItem('favoritesMovies')) {
+      return JSON.parse(localStorage.getItem('favoritesMovies'));
     } else {
       return [];
     }
@@ -22,19 +22,26 @@ const AboutFilm = () => {
 
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState(initialStateComments());
-  const [movie, setMovie] = useState(initialStateFavoriteMovie());
+  const [movie, setMovie] = useState({});
+  const [favoriteMovies, setFavoriteMovies] = useState(
+    initialStateFavoriteMovie()
+  );
 
   const { pathname } = useLocation();
 
   useEffect(() => {
     setMovie(JSON.parse(localStorage.getItem('movie')));
-    // localStorage.setItem('movieComment', JSON.stringify(comments));
   }, []);
 
   // Add to favorites
   const addToFavorites = () => {
-    localStorage.setItem('favoriteMovie', JSON.stringify(movie));
+    setFavoriteMovies([...favoriteMovies, movie]);
+    localStorage.setItem(
+      'favoritesMovies',
+      JSON.stringify(favoriteMovies)
+    );
   };
+  console.log(favoriteMovies);
 
   // Add comment
   const addComment = () => {
@@ -48,8 +55,6 @@ const AboutFilm = () => {
     ]);
     localStorage.setItem('movieComment', JSON.stringify(comments));
   };
-
-  console.log(movie.id);
 
   return (
     <div className="about-film">
