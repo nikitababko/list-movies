@@ -32,8 +32,6 @@
       transition: border 0.4s ease-in-out;
 
       &:hover {
-        border: 3px solid #299ded;
-
         img {
           filter: blur(4px);
         }
@@ -41,6 +39,19 @@
         .card-movie__info {
           opacity: 1;
         }
+
+        .card-movie__additional-info {
+          opacity: 1;
+        }
+
+        .card-movie__inner {
+          border: 3px solid #299ded;
+        }
+      }
+
+      &__inner {
+        border: 3px solid transparent;
+        transition: border 0.4s ease-in-out;
       }
 
       img {
@@ -52,7 +63,7 @@
 
       &__info {
         position: absolute;
-        top: 50%;
+        top: 43%;
         left: 50%;
         transform: translate(-50%, -50%);
 
@@ -93,11 +104,13 @@
 
         &-button {
           padding: 8px 0;
-          margin: 0 auto;
           width: 160px;
+          text-decoration: none;
+          text-align: center;
 
           font-size: 25px;
           font-weight: bold;
+          color: #303539;
           background-color: #299ded;
           border: none;
           border-radius: 5px;
@@ -109,6 +122,26 @@
             background-color: #303539;
             color: #299ded;
           }
+        }
+      }
+
+      &__additional-info {
+        margin-top: 5px;
+        line-height: 1.6;
+
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+
+        .title {
+          width: 200px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: #fff;
+        }
+
+        .year {
+          color: #9ca1a4;
         }
       }
     }
