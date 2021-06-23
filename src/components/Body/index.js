@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import { Search, ListMovies } from 'components';
+import { Search, ListMovies, FavoritesMovies } from 'components';
 import AboutFilm from 'components/ListMovies/AboutFilm/index.js';
 
 import './index.scss';
@@ -17,7 +17,7 @@ const Body = () => {
     <div className="body">
       <Switch>
         <Route exact path="/" component={ListMovies} />
-        <Route exact path="/favorites" />
+        <Route exact path="/favorites" component={FavoritesMovies} />
         <Route exact path="/:id" component={AboutFilm} />
       </Switch>
     </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import './index.scss';
 
@@ -11,12 +12,19 @@ const AboutFilm = () => {
     }
   };
 
-  const [oldComments, setOldComments] = useState(
-    JSON.parse(localStorage.getItem('movieComment'))
-  );
+  const initialStateFavoriteMovie = () => {
+    if (localStorage.getItem('favoriteMovie')) {
+      return JSON.parse(localStorage.getItem('favoriteMovie'));
+    } else {
+      return [];
+    }
+  };
+
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState(initialStateComments());
-  const [movie, setMovie] = useState({});
+  const [movie, setMovie] = useState(initialStateFavoriteMovie());
+
+  const { pathname } = useLocation();
 
   useEffect(() => {
     setMovie(JSON.parse(localStorage.getItem('movie')));
@@ -32,12 +40,16 @@ const AboutFilm = () => {
   const addComment = () => {
     setComments([
       ...comments,
-      { date: new Date().toLocaleString('en-US'), text: comment },
+      {
+        movieId: movie.id,
+        date: new Date().toLocaleString('en-US'),
+        text: comment,
+      },
     ]);
     localStorage.setItem('movieComment', JSON.stringify(comments));
   };
 
-  console.log(comments);
+  console.log(movie.id);
 
   return (
     <div className="about-film">
@@ -67,17 +79,22 @@ const AboutFilm = () => {
 
         <div className="comments">
           <h4 className="title">Comments</h4>
-          {oldComments
-            ? oldComments.map((comment) => (
-                <div key={comment.date} className="comments__items ">
-                  <div className="item">
-                    <div className="item__header">
-                      <span>You </span>
-                      <span>{comment.date}</span>
+          {comments
+            ? comments.map((comment) => (
+                <>
+                  {comment.movieId.toString() ===
+                  pathname.split('/')[1].toString() ? (
+                    <div key={comment.date} className="comments__items ">
+                      <div className="item">
+                        <div className="item__header">
+                          <span>You </span>
+                          <span>{comment.date}</span>
+                        </div>
+                        <p className="text">{comment.text}</p>
+                      </div>
                     </div>
-                    <p className="text">{comment.text}</p>
-                  </div>
-                </div>
+                  ) : null}
+                </>
               ))
             : null}
 
