@@ -16,10 +16,10 @@ const Body = () => {
   return (
     <div className="body">
       <Switch>
-        {/* <Route exact path="/" component={ListMovies} /> */}
+        <Route exact path="/" component={Search} />
         <Route exact path="/trendings" component={ListMovies} />
-        <Route exact path="/favorites" component={FavoritesMovies} />
         <Route exact path="/:id" component={AboutFilm} />
+        <Route exact path="/favorites" component={FavoritesMovies} />
       </Switch>
     </div>
   );

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import Pagination from './Pagination';
-import Search from './Search/Search';
 import CardMovie from './CardMovie';
 
 import './index.scss';
@@ -36,8 +35,6 @@ const ListMovies = () => {
 
   return (
     <div className="list-movies">
-      <Search />
-
       <div className="list-movies__header">
         <div className="tag-movie">
           <p>Титаник</p>
