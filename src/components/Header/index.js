@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import SearchIcon from './assets/SearchIcon';
 import FavIcon from './assets/FavIcon';
+import TrendingsIcon from './assets/TrendingsIcon';
 
 import './index.scss';
 
@@ -17,6 +18,15 @@ const Header = () => {
           to="/"
         >
           <SearchIcon />
+        </Link>
+
+        <Link
+          className={
+            pathname === '/trendings' ? 'nav__link active' : 'nav__link'
+          }
+          to="/trendings"
+        >
+          <TrendingsIcon />
         </Link>
 
         <Link
