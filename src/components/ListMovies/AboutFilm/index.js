@@ -52,7 +52,6 @@ const AboutFilm = () => {
         text: comment,
       },
     ]);
-    localStorage.setItem('movieComment', JSON.stringify(comments));
   };
 
   useEffect(() => {
@@ -82,7 +81,7 @@ const AboutFilm = () => {
           <p>{movie.synopsis}</p>
         </p>
         <button onClick={addToFavorites} className="button-favorites">
-          Add to favorites
+          Add to favoritesAdd to favorites
         </button>
 
         <div className="comments">
