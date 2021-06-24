@@ -1,5 +1,9 @@
 {
   "name": "list-movies",
+  "author": {
+    "name": "Nikita Babko",
+    "email": "niki.babko@gmail.com"
+  },
   "homepage": "https://nikitababko.github.io/list-movies",
   "version": "0.1.0",
   "private": true,
