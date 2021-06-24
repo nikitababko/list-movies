@@ -36,11 +36,14 @@ const AboutFilm = () => {
   // Add to favorites
   const addToFavorites = () => {
     setFavoriteMovies([...favoriteMovies, movie]);
+  };
+
+  useEffect(() => {
     localStorage.setItem(
       'favoritesMovies',
       JSON.stringify(favoriteMovies)
     );
-  };
+  }, [favoriteMovies]);
 
   // Add comment
   const addComment = () => {
@@ -81,7 +84,7 @@ const AboutFilm = () => {
           <p>{movie.synopsis}</p>
         </p>
         <button onClick={addToFavorites} className="button-favorites">
-          Add to favoritesAdd to favorites
+          Add to favorites
         </button>
 
         <div className="comments">
