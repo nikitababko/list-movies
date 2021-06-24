@@ -11,7 +11,7 @@ const CardMovie = ({ movies }) => {
 
   return (
     <>
-      {movies.length
+      {movies
         ? movies.map((element) => (
             <div key={element.id} className="card-movie">
               <div className="card-movie__inner">
