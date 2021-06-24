@@ -41,7 +41,6 @@ const AboutFilm = () => {
       JSON.stringify(favoriteMovies)
     );
   };
-  console.log(favoriteMovies);
 
   // Add comment
   const addComment = () => {
@@ -55,6 +54,10 @@ const AboutFilm = () => {
     ]);
     localStorage.setItem('movieComment', JSON.stringify(comments));
   };
+
+  useEffect(() => {
+    localStorage.setItem('movieComment', JSON.stringify(comments));
+  }, [comments]);
 
   return (
     <div className="about-film">
@@ -84,7 +87,7 @@ const AboutFilm = () => {
 
         <div className="comments">
           <h4 className="title">Comments</h4>
-          {comments
+          {comments.length
             ? comments.map((comment) => (
                 <>
                   {comment.movieId.toString() ===

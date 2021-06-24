@@ -11,8 +11,6 @@ const FavoritesMovies = () => {
     );
   }, []);
 
-  console.log(favoritesMovies);
-
   return (
     <div className="list-movies">
       <div className="list-movies__body">

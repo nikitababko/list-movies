@@ -18,8 +18,6 @@ const Search = () => {
   const [allMovies, setAllMovies] = useState([]);
   const [sortedMovie, setSortedMovie] = useState(initialStateFoundMovie());
 
-  console.log(sortedMovie);
-
   const fetchMovies = () => {
     fetch('https://yts.mx/api/v2/list_movies.json?limit=50')
       .then((response) => response.json())
